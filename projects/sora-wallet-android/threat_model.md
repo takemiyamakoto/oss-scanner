@@ -2,7 +2,7 @@
 
 SORA Wallet is a non-custodial wallet for SORA and Polkaswap. The enrolled
 `modernize` branch also contains Iroha/Taira wallet and Iroha Connect integration;
-the validated revision is `144d6fb08e804cebc190fca252a2ed0025f80350`.
+the validated revision is `edea88ac85dffed2b613fd05b923fc1d3e4d3baa`.
 Protect mnemonic phrases, private keys, decrypted credentials, backup material,
 and the integrity of transaction authorization. Public account addresses and
 watch-only accounts must not become signing authority. User consent must bind the
@@ -86,12 +86,14 @@ cache are not installed. Those paths remain available for source review, but
 their execution requires separate platform setup. Passing the portable tests
 does not establish full wallet, device, or release qualification.
 
-The source keeps its BSD-4-Clause license and third-party notices. This product
-includes software developed by Polka Biome Ltd., SORA, and Polkaswap.
+First-party source is licensed under Apache-2.0. Third-party components keep
+their existing licenses and attribution; see LICENSE and NOTICE in the source
+repository. This product includes software developed by Polka Biome Ltd., SORA,
+and Polkaswap.
 
 ## Security contact
 
 The enrolled `modernize` branch publishes its security contact in
-[`SECURITY.md`](https://github.com/sora-xor/sora-android/blob/144d6fb08e804cebc190fca252a2ed0025f80350/SECURITY.md):
+[`SECURITY.md`](https://github.com/sora-xor/sora-android/blob/edea88ac85dffed2b613fd05b923fc1d3e4d3baa/SECURITY.md):
 `takemiya@soramitsu.co.jp` (Makoto Takemiya, `@takemiyamakoto`).
 The source revision above was revalidated on October 28, 2026.
