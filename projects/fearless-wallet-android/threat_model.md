@@ -39,7 +39,7 @@ Key custody and durable failure handling are in
 `common/src/main/java/jp/co/soramitsu/common/data/secrets/`. Portable wallet-material
 parsers and staged receive flows live in
 `feature-account-impl/src/main/java/jp/co/soramitsu/account/impl/data/repository/`.
-Passkey backup code is in `public-shared-features-backup/`. Android Keystore,
+Passkey backup code is in the app-owned `core-backup/` module. Android Keystore,
 Credential Manager, Google Drive and Play Integrity are external trust boundaries;
 source interfaces and error transitions remain in scope even when unavailable.
 
@@ -58,3 +58,12 @@ Gradle dependency cache. Other Android/UI/native targets require platform setup
 and are available for source review here. Full device/backup/release qualification
 is separate. Dependency revisions for the full app remain in
 `config/android-runtime-source-pins.json`; the harness does not replace those pins.
+
+## Validated source
+
+The `master` branch was validated at
+`86b6586054277690f8dd8e4b098c56f597a926a3` on 28 October 2026. The image compiled
+two production codec/presentation source files and three original JUnit classes,
+and passed all 19 tests after an offline rebuild in the finished scanner image.
+The Android APK, complete Gradle suite and device services are not qualified by
+these portable tests.
