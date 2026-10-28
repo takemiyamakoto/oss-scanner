@@ -2,7 +2,7 @@
 
 SORA Wallet is a non-custodial wallet for SORA and Polkaswap. The enrolled
 `modernize` branch also contains Iroha/Taira wallet and Iroha Connect integration;
-the initial validated revision is `2e49467a9d582fcab2df184b311449281b2f3c7c`.
+the validated revision is `144d6fb08e804cebc190fca252a2ed0025f80350`.
 Protect mnemonic phrases, private keys, decrypted credentials, backup material,
 and the integrity of transaction authorization. Public account addresses and
 watch-only accounts must not become signing authority. User consent must bind the
@@ -88,3 +88,10 @@ does not establish full wallet, device, or release qualification.
 
 The source keeps its BSD-4-Clause license and third-party notices. This product
 includes software developed by Polka Biome Ltd., SORA, and Polkaswap.
+
+## Security contact
+
+The enrolled `modernize` branch publishes its security contact in
+[`SECURITY.md`](https://github.com/sora-xor/sora-android/blob/144d6fb08e804cebc190fca252a2ed0025f80350/SECURITY.md):
+`takemiya@soramitsu.co.jp` (Makoto Takemiya, `@takemiyamakoto`).
+The source revision above was revalidated on October 28, 2026.
