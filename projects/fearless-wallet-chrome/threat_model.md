@@ -56,5 +56,17 @@ for additional suites; the full dependency install remains available offline.
 
 Tests use synthetic keys. No Chrome profile, live wallet, extension-store upload,
 release signing or release approval is involved. The production bundle keeps the
-repository's default Bitcoin/Iroha transfer release flags; tests and source review
-can examine those code paths independently of live transfer qualification.
+repository's Bitcoin/Iroha transfer flags derived from its readiness manifests,
+and disables Iroha dApp connections. Tests and source review can examine those
+code paths independently of live transfer qualification. The scanner build is
+not a signed store release or proof that device, browser-upgrade and live-chain
+release checks have passed.
+
+## Validated source
+
+The `master` branch was validated at
+`25b301de14cbafa7fd94ad5f67de55af039b98bd` on 28 October 2026. The production
+Chrome bundle and 38 original tests across six selected Vitest suites passed
+in the finished scanner image with networking disabled and 2 CPUs/8 GiB.
+Tracked application and test sources remained unchanged. This focused scanner
+check does not replace the complete browser/device/upgrade/release checks above.
