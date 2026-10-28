@@ -3,8 +3,8 @@
 ## Project and audit revision
 
 This repository is the public SORA network and Polkaswap iOS wallet. Enroll the
-`modernize` branch used by the application workspace, initially validated at
-`84980a95f4e7e48c1f436c67545149c33eea73f3`. The complete repository and Git
+`modernize` branch used by the application workspace, validated at
+`f911956a0943d134bcb593bc90e498741ba3b20e`. The complete repository and Git
 history are retained in `/src`; the small Linux harness is not a replacement
 for reviewing the complete app.
 
@@ -97,3 +97,10 @@ Retain the repository's BSD-4-Clause license and all vendored component licenses
 this enrollment does not relicense application code or third-party binaries.
 
 This product includes software developed by Polka Biome Ltd., SORA, and Polkaswap.
+
+## Security contact
+
+The enrolled `modernize` branch publishes its security contact in
+[`SECURITY.md`](https://github.com/sora-xor/sora-ios/blob/f911956a0943d134bcb593bc90e498741ba3b20e/SECURITY.md):
+`takemiya@soramitsu.co.jp` (Makoto Takemiya, `@takemiyamakoto`).
+The source revision above was revalidated on October 28, 2026.
