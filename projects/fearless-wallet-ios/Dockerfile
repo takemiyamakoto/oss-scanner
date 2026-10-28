@@ -2,6 +2,16 @@
 # Linux build of the app-owned portable wallet codecs and original tests.
 # UIKit/Keychain/App Attest/CloudKit need macOS and are source-review surfaces here.
 FROM swift:6.1-jammy
+# The scanner installs Ubuntu Clang over /usr/bin/clang and /usr/bin/clang++.
+# Resolve Swift's compiler now and keep its versioned toolchain selected for
+# clean offline SwiftPM rebuilds after that scanner layer is installed.
+RUN mkdir -p /opt/swift-toolchain/bin \
+    && ln -s "$(readlink -f "$(command -v clang)")" /opt/swift-toolchain/bin/clang \
+    && ln -s "$(readlink -f "$(command -v clang++)")" /opt/swift-toolchain/bin/clang++ \
+    && test -d "$(/opt/swift-toolchain/bin/clang -print-resource-dir)"
+ENV CC=/opt/swift-toolchain/bin/clang \
+    CXX=/opt/swift-toolchain/bin/clang++ \
+    PATH=/opt/swift-toolchain/bin:$PATH
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git python3 curl \
     && rm -rf /var/lib/apt/lists/*
 COPY . /src

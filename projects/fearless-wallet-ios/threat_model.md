@@ -40,12 +40,16 @@ lifetime and partial-commit recovery.
 Apple Keychain, AuthenticationServices/App Attest, CloudKit, UIKit and the
 system browser are platform boundaries. A scanner lacking those services must
 not interpret that absence as an authentication bypass or successful device test.
-The application's shared dependency pin is in `config/shared-features-source.json`.
+The app-owned native modules and their provenance are recorded in
+`config/native-sources.json` and `Native/`.
 
 ## Audit image
 
 The full committed checkout and `.git` are at `/src`. Swift 6.1 is installed;
-the separate SwiftPM harness is under `/opt/scanner`. The harness compiles
+the separate SwiftPM harness is under `/opt/scanner`. Its compiler paths resolve
+to the Swift image's versioned Clang before the scanner installs Ubuntu Clang,
+so a clean offline SwiftPM rebuild continues to use the compatible compiler.
+The harness compiles
 app-owned portable material codecs, their validation/asset-row helpers and the
 Android-source proof parser directly from the source files. It runs all ten
 portable semantic material tests and all five Android-source proof tests.
@@ -65,3 +69,11 @@ The complete UIKit app cannot be built or launched on Linux. This image does not
 pretend to run Xcode/simulator, Keychain, App Attest, CloudKit, the device signer,
 or their full test suites. Those implementation paths remain source-review targets.
 No private CocoaPods overlay or signing credentials are copied into the image.
+
+## Validated source
+
+The `master` branch was validated at
+`cbc0b07c85118b2c652b440af2f2cee73458ef8f` on 28 October 2026. All 15 original
+portable tests passed after cleaning the build outputs and rebuilding entirely
+offline in the finished scanner image. Application sources and original test
+assertions remain unchanged; the platform limitations above still apply.
